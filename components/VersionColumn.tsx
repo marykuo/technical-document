@@ -13,7 +13,7 @@ const VersionColumn: React.FC<VersionColumnProps> = ({ data }) => {
 
   return (
     <div className="flex flex-col h-full bg-white dark:bg-slate-900 border-x border-slate-100 dark:border-slate-800 px-6 py-8 animate-fadeIn">
-      <div className="mb-8">
+      <div className="mb-8" id="overviews">
         <h2 className="text-3xl font-black text-sky-600 dark:text-sky-400 mb-2">{data.version}</h2>
         <p className="text-slate-600 dark:text-slate-400 leading-relaxed italic">
           "{data.overview}"
@@ -21,7 +21,7 @@ const VersionColumn: React.FC<VersionColumnProps> = ({ data }) => {
       </div>
 
       {/* Dependency Section */}
-      <section>
+      <section id="dependency">
         <SectionHeader title="Dependency" />
         <div className="flex gap-2 mb-3">
           {(['maven', 'gradle'] as const).map((type) => (
@@ -42,7 +42,7 @@ const VersionColumn: React.FC<VersionColumnProps> = ({ data }) => {
       </section>
 
       {/* Assertions */}
-      <section>
+      <section id="assertions">
         <SectionHeader title="Assertions" />
         {data.assertions.map((feature, i) => (
           <div key={i} className="mb-6">
@@ -56,7 +56,7 @@ const VersionColumn: React.FC<VersionColumnProps> = ({ data }) => {
       </section>
 
       {/* Assumptions */}
-      <section>
+      <section id="assumptions">
         <SectionHeader title="Assumptions" />
         {data.assumptions.map((feature, i) => (
           <div key={i} className="mb-6">
@@ -70,7 +70,7 @@ const VersionColumn: React.FC<VersionColumnProps> = ({ data }) => {
       </section>
 
       {/* Annotations */}
-      <section>
+      <section id="annotations">
         <SectionHeader title="Annotations" />
         {data.annotations.map((feature, i) => (
           <div key={i} className="mb-6">
